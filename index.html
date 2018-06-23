@@ -10,7 +10,19 @@
     <!--Go to https://console.firebase.google.com-->
     <!--Sign in and add a project "fireMessage"-->
     <!--PASTE SNIPPET HERE-->
-
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyD8woHJQYcfqeRL5QKhYUUCaqBWT_cuCLk",
+        authDomain: "firemessage-e3f2f.firebaseapp.com",
+        databaseURL: "https://firemessage-e3f2f.firebaseio.com",
+        projectId: "firemessage-e3f2f",
+        storageBucket: "firemessage-e3f2f.appspot.com",
+        messagingSenderId: "294872923882"
+    };
+    firebase.initializeApp(config);
+    </script>
 
 
     <!--custom files-->
@@ -20,11 +32,11 @@
 <body>
 
     <!--Add your name-->
-    <h1>Bob's Messaging App</h1>
+    <h1>Mahdi's Messaging App</h1>
 
     <!--This div will be populated with messages-->
     <div class="allMessages">
-        
+
     </div>
     
     <!--For user to input messages-->
