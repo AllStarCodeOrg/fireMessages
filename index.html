@@ -13,24 +13,16 @@
 
 
 
-
-    <!--jquery-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!--google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Alike+Angular|Asul|Eczar" rel="stylesheet">
-
     <!--custom files-->
-    <script src="lib/js/main.js"></script>
+    <script src="lib/js/main.js" defer></script>
     <link rel="stylesheet" href="lib/css/style.css">
-
 </head>
 <body>
 
     <!--Add your name-->
     <h1>Bob's Messaging App</h1>
 
-    <!--Will be populated with messages-->
+    <!--This div will be populated with messages-->
     <div class="allMessages">
         
     </div>
@@ -38,17 +30,17 @@
     <!--For user to input messages-->
     <div class="userContainer">
         <form>
-            <div class="textContainer">
-                <div>
-                    <p>Your name:</p><input id="name" type="text">
+            <div class="inputContainer">
+                <div class="singleInput">
+                    <label for="username">Your name:</label>
+                    <input id="username" type="text">
                 </div>
-                <div>
-                    <p>Message:</p><input id="message" type="text">
+                <div class="singleInput">
+                    <label for="message">Message:</label>
+                    <input id="message" type="text">
                 </div>
             </div>
-            <div class="GObutton">
-                <input type="reset" onclick="updateDB();" value="Submit/Update">
-            </div>
+            <button id="submitButton">Submit</button>
         </form>
     </div>
 </body>

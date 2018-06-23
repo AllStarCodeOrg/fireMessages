@@ -1,69 +1,125 @@
-html,body{
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great|Gudea:700');
+/* GOOGLE FONTS */
+/* font-family: 'Fredericka the Great', cursive; */
+/* font-family: 'Gudea', sans-serif; */
+
+/* COLOR PALETTE */
+/* https://coolors.co/36151e-839791-593f62-e3b23c-edebd7 */
+:root{
+    --primaryDark:#36151E;
+    --primaryLight:#EDEBD7;
+    --accent:#E3B23C;
+    --alternate:#593F62;
+    --addedPadding:10px;
+}
+
+html,body,h1,p{
     margin:0;
-    height:100%;
 }
 
 body{
-    background-color: black;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--primaryDark);
 }
 
-h1{
-    /*GOOGLE FONTS*/
-    /*font-family: 'Asul', sans-serif;*/
-    /*font-family: 'Alike Angular', serif;*/
-    /*font-family: 'Eczar', serif;*/
-    font-family: 'Eczar', serif;
-    font-size: 45px;
-    margin:0;
-    color:white;
-    text-align: center;
-}
-.allMessages{
-    position:relative;
-    height:70%;
-    margin: 0 auto;
-    width: 60%;
-    border: 2px solid blue;
-    background-color: white;
-    overflow-y: scroll;
-    overflow-wrap: break-word;
-}
-
-.userContainer{
-    position:relative;
-    height:10%;
-    margin: 20px auto 0 auto;
-    width: 60%;
-    border: 2px solid yellow;
-    background-color: oldlace;
-}
-
-
-.textContainer div p{
-    /*GOOGLE FONTS*/
-    /*font-family: 'Asul', sans-serif;*/
-    /*font-family: 'Alike Angular', serif;*/
-    /*font-family: 'Eczar', serif;*/
-    font-family: 'Asul', sans-serif;
-    font-size: 1em;
-    display: inline-block;
-    width:23%;
-    margin:0;
+h1,label,#submitButton{
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: bold;
 }
 
 input{
-    width:75%;
+    font-family: 'Gudea', sans-serif;
 }
 
-.textContainer div{
-    width:100%;
+h1{
+    font-size: 45px;
+    color:var(--accent);
+    text-align: center;
 }
 
-.GObutton{
-    width:50%;
-    margin: 0 auto;
+.allMessages{
+    flex:1;
+    margin-top: 15px;
+    width: calc(60% + var(--addedPadding)*2);
+    padding:var(--addedPadding);
+    border: 2px solid var(--accent);
+    background-color: var(--primaryLight);
+    color:var(--alternate);
+    overflow-y: scroll;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    display:grid;
+    grid-auto-rows: min-content;
+    grid-gap:5px;
+}
+.allMessages > p {
+    text-indent: -2em;
+    margin-left:2em;
 }
 
-.GObutton input{
-    width: 100%;
+.userContainer{
+    margin: 20px 0 40px 0;
+    width: 60%;
+    border: 2px solid var(--accent);
+    background-color: var(--primaryLight);
+}
+
+label{
+    font-size: 1.3em;
+    color:var(--primaryDark);
+}
+
+input{
+    font-size: 1.3em;
+    background: none;
+    border:unset;
+    border-bottom:var(--alternate) 2px solid;
+    caret-color: var(--accent);
+    color:var(--alternate);
+}
+
+input:focus{
+    outline:none;
+}
+.userContainer{
+    padding: var(--addedPadding);
+}
+
+form,.inputContainer,.singleInput{
+    display:grid;
+    grid-gap: var(--addedPadding);
+}
+
+form{
+    grid-template: auto/1fr auto;
+}
+
+.inputContainer{
+    grid-template: auto auto/auto;
+}
+
+.singleInput{
+    grid-template: auto/auto 1fr;    
+}
+
+#submitButton{
+    color:var(--primaryDark);
+    background-color: var(--accent);
+    font-size: 1.3em;
+    transition: color 300ms ease-in, background-color 300ms ease-in;
+    cursor: pointer;
+}
+
+#submitButton:hover{
+    background-color:var(--primaryDark);
+    color: var(--accent);
+}
+
+#submitButton:focus{
+    outline-style: none;
+    outline-width: 2px;
+    outline-color: var(--primarydark);
 }
